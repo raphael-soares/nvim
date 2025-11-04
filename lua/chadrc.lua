@@ -9,24 +9,8 @@ M.base46 = {
     },
 }
 
-local st = require("configs.statusline")
 
 M.ui = {
-    statusline = {
-        modules = {
-            git_branch = st.git_branch,
-            lsp = st.lsp,
-        },
-        separator_style = "default",
-        order = {
-            "mode",
-            "file",
-            "%=",
-            "lsp_msg",
-            "lsp",
-            "git_branch",
-        },
-    },
     tabufline = {
         enabled = false,
         order = { "treeOffset", "buffers", "tabs" },
