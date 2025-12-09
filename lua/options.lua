@@ -1,9 +1,9 @@
 require("nvchad.options")
-
 local o = vim.o
 
 o.conceallevel = 2
 o.concealcursor = "nc"
+o.scrolloff = 10
 
 o.shiftwidth = 2
 o.tabstop = 2

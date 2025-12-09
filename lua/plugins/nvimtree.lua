@@ -1,6 +1,6 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    -- enabled = false,
+    enabled = false,
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 
     config = function()
@@ -51,14 +51,14 @@ return {
                 highlight_git = true,
                 indent_markers = { enable = true },
             },
-
+            -- A mágica que você quer:
             update_focused_file = {
-                enable = true,
-                update_cwd = true,
+                enable = true, -- sempre mantém o NvimTree focado no arquivo atual
+                update_cwd = true, -- opcional: muda o CWD para o do arquivo
             },
             hijack_directories = {
                 enable = true,
-                auto_open = true,
+                auto_open = true, -- abre NvimTree quando abrir uma pasta
             },
         })
     end,

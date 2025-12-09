@@ -19,7 +19,6 @@ M.setup = function()
         "vtsls",
         "vue_ls",
         "jsonls",
-        "eslint",
     }
 
     for _, lsp in ipairs(servers) do

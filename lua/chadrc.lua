@@ -9,12 +9,8 @@ M.base46 = {
     },
 }
 
-
 M.ui = {
-    tabufline = {
-        enabled = false,
-        order = { "treeOffset", "buffers", "tabs" },
-    },
+    tabufline = { enabled = false },
 }
 
 return M
