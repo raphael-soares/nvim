@@ -92,11 +92,3 @@ vim.api.nvim_create_autocmd("CursorMoved", {
     end,
 })
 
--- ide like highlight when stopping cursor
-vim.api.nvim_create_autocmd("CursorMovedI", {
-    group = "LspReferenceHighlight",
-    desc = "Clear highlights when entering insert mode",
-    callback = function()
-        vim.lsp.buf.clear_references()
-    end,
-})

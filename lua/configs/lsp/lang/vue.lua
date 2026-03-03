@@ -64,15 +64,4 @@ M.vue_ls = function()
     }
 end
 
-M.ts_ls = function()
-    return {
-        on_attach = keymaps.on_attach,
-        capabilities = nvlsp.capabilities,
-        init_options = {
-            plugins = { vue_plugin },
-        },
-        filetypes = tsserver_filetypes,
-    }
-end
-
 return M

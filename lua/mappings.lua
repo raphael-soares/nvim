@@ -16,10 +16,10 @@ map("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", {
 map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Selection Down" })
 
 -- File explorer
--- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-map("n", "<leader>e", function()
-    require("oil").toggle_float()
-end, { desc = "nvimtree toggle window" })
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+-- map("n", "<leader>e", function()
+--     require("oil").toggle_float()
+-- end, { desc = "nvimtree toggle window" })
 
 map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "next buffer" })
 map("n", "<leader>bp", "<cmd>bprev<CR>", { desc = "previous buffer" })

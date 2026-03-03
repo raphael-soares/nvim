@@ -6,7 +6,6 @@ M.setup = function()
     local nvlsp = require("nvchad.configs.lspconfig")
     local keymaps = require("configs.lsp.mappings")
 
-    local clang = require("configs.lsp.lang.clang")
     local vuejs = require("configs.lsp.lang.vue")
 
     local servers = {
@@ -16,9 +15,8 @@ M.setup = function()
         "clangd",
         "pyright",
         "tailwindcss",
-        "vtsls",
-        "vue_ls",
         "jsonls",
+        "terraformls",
     }
 
     for _, lsp in ipairs(servers) do
@@ -29,11 +27,16 @@ M.setup = function()
         })
     end
 
-    vim.lsp.config("clangd", clang.config())
+    local custom_servers = {
+        "vue_ls",
+        "vtsls",
+    }
+
     vim.lsp.config("vue_ls", vuejs.vue_ls())
     vim.lsp.config("vtsls", vuejs.vtsls())
 
     vim.lsp.enable(servers)
+    vim.lsp.enable(custom_servers)
 end
 
 return M

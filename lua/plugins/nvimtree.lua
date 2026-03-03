@@ -1,7 +1,10 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    enabled = false,
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "antosha417/nvim-lsp-file-operations",
+    },
 
     config = function()
         local api = require("nvim-tree.api")
@@ -38,7 +41,14 @@ return {
             vim.keymap.set("n", "l", righty, opts)
         end
 
-        dofile(vim.g.base46_cache .. "nvimtree")
+        require("lsp-file-operations").setup({
+            debug = false,
+            timeout_ms = 2000,
+        })
+
+        if vim.g.base46_cache then
+            dofile(vim.g.base46_cache .. "nvimtree")
+        end
 
         require("nvim-tree").setup({
             on_attach = custom_on_attach,
@@ -51,14 +61,13 @@ return {
                 highlight_git = true,
                 indent_markers = { enable = true },
             },
-            -- A mágica que você quer:
             update_focused_file = {
-                enable = true, -- sempre mantém o NvimTree focado no arquivo atual
-                update_cwd = true, -- opcional: muda o CWD para o do arquivo
+                enable = true,
+                update_cwd = true,
             },
             hijack_directories = {
                 enable = true,
-                auto_open = true, -- abre NvimTree quando abrir uma pasta
+                auto_open = true,
             },
         })
     end,
