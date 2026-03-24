@@ -17,6 +17,8 @@ map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc 
 
 -- File explorer
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+map("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "nvimtree toggle window" })
+
 -- map("n", "<leader>e", function()
 --     require("oil").toggle_float()
 -- end, { desc = "nvimtree toggle window" })
@@ -41,7 +43,7 @@ map(
     { desc = "telescope find all files" }
 )
 
-vim.keymap.set("n", "<leader>q", function()
+map("n", "<leader>q", function()
     vim.diagnostic.setqflist()
     vim.cmd("copen")
 end, { desc = "Diagnostics to quickfix" })

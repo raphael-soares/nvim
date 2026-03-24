@@ -1,12 +1,10 @@
 local M = {}
 
-M.config = function(on_attach_default, capabilities)
-    local lspconfig = require("lspconfig")
-
+M.config = function()
     return {
-        on_attach = on_attach_default,
-        capabilities = capabilities,
-        root_dir = lspconfig.util.root_pattern("manage.py", "setup.py", ".git"),
+        on_attach = require("configs.lsp.mappings").on_attach,
+        capabilities = require("nvchad.configs.lspconfig").capabilities,
+        root_markers = { "manage.py", "setup.py", ".git" },
     }
 end
 

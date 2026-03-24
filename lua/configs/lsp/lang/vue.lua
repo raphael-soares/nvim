@@ -1,7 +1,6 @@
 -- Reference: https://github.com/vuejs/language-tools/wiki/Neovim#vue-2-support
 local M = {}
 
-require("nvchad.configs.lspconfig").defaults()
 local keymaps = require("configs.lsp.mappings")
 local nvlsp = require("nvchad.configs.lspconfig")
 

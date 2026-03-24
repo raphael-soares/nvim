@@ -1,10 +1,7 @@
 return {
     "nvim-tree/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "antosha417/nvim-lsp-file-operations",
-    },
+    dependencies = { "antosha417/nvim-lsp-file-operations" },
 
     config = function()
         local api = require("nvim-tree.api")
@@ -41,10 +38,7 @@ return {
             vim.keymap.set("n", "l", righty, opts)
         end
 
-        require("lsp-file-operations").setup({
-            debug = false,
-            timeout_ms = 2000,
-        })
+        require("lsp-file-operations").setup()
 
         if vim.g.base46_cache then
             dofile(vim.g.base46_cache .. "nvimtree")

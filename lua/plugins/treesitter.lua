@@ -12,11 +12,14 @@ return {
             "python",
             "bash",
             "markdown",
+            "markdown_inline",
             "tsx",
-        },
-        highlight = {
-            enable = true,
-            additional_vim_regex_highlighting = false,
+            "c",
+            "yaml",
+            "toml",
+            "vim",
+            "vimdoc",
+            "query",
         },
     },
 }

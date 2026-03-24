@@ -1,12 +1,8 @@
 local M = {}
 
 M.setup = function()
-    require("nvchad.configs.lspconfig").defaults()
-
     local nvlsp = require("nvchad.configs.lspconfig")
     local keymaps = require("configs.lsp.mappings")
-
-    local vuejs = require("configs.lsp.lang.vue")
 
     local servers = {
         "lua_ls",
@@ -27,16 +23,14 @@ M.setup = function()
         })
     end
 
-    local custom_servers = {
-        "vue_ls",
-        "vtsls",
-    }
-
+    local vuejs = require("configs.lsp.lang.vue")
     vim.lsp.config("vue_ls", vuejs.vue_ls())
     vim.lsp.config("vtsls", vuejs.vtsls())
 
-    vim.lsp.enable(servers)
-    vim.lsp.enable(custom_servers)
+    local django = require("configs.lsp.lang.djlsp")
+    vim.lsp.config("djlsp", django.config())
+
+    vim.lsp.enable(vim.list_extend(servers, { "vue_ls", "vtsls", "djlsp" }))
 end
 
 return M
