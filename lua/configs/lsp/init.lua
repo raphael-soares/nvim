@@ -9,7 +9,7 @@ M.setup = function()
         "html",
         "cssls",
         "clangd",
-        "pyright",
+        "basedpyright",
         "tailwindcss",
         "jsonls",
         "terraformls",

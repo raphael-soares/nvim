@@ -67,6 +67,8 @@ vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
     end,
 })
 
+
+
 -- ide like highlight when stopping cursor
 local lsp_highlight_group = vim.api.nvim_create_augroup("LspReferenceHighlight", { clear = true })
 

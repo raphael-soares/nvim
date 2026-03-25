@@ -1,7 +1,7 @@
 require("nvchad.options")
 local o = vim.o
 
-o.conceallevel = 2
+o.conceallevel = 0
 o.concealcursor = "nc"
 o.scrolloff = 10
 
@@ -12,6 +12,7 @@ o.number = true
 o.relativenumber = true
 o.swapfile = false
 o.signcolumn = "yes"
+o.wrap = false
 
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
