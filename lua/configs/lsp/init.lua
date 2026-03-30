@@ -12,6 +12,7 @@ M.setup = function()
         "basedpyright",
         "tailwindcss",
         "jsonls",
+        "marksman",
         "terraformls",
     }
 

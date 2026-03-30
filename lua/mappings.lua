@@ -18,7 +18,6 @@ map("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc 
 -- File explorer
 map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
-
 map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "next buffer" })
 map("n", "<leader>bp", "<cmd>bprev<CR>", { desc = "previous buffer" })
 
@@ -43,3 +42,7 @@ map("n", "<leader>q", function()
     vim.diagnostic.setqflist()
     vim.cmd("copen")
 end, { desc = "Diagnostics to quickfix" })
+
+map("n", "<leader>mps", "<cmd>MarkdownPreview<cr>", { desc = "Markdown: Start preview" })
+map("n", "<leader>mpS", "<cmd>MarkdownPreviewStop<cr>", { desc = "Markdown: Stop preview" })
+map("n", "<leader>mpr", "<cmd>MarkdownPreviewRefresh<cr>", { desc = "Markdown: Refresh preview" })
