@@ -1,7 +1,6 @@
 local map = vim.keymap.set
 
 -- General
-map("n", "<leader>a", "gg<S-v>G", { desc = "Select All" })
 map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
@@ -20,6 +19,12 @@ map("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Oil" })
 
 map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "next buffer" })
 map("n", "<leader>bp", "<cmd>bprev<CR>", { desc = "previous buffer" })
+
+-- LSP extra mappings
+map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+map({ "n", "v" }, "<leader>cf", function()
+    require("conform").format({ async = true, lsp_fallback = true })
+end, { desc = "Format Code" })
 
 -- Telescope
 map("n", "<leader><leader>", "<cmd>Telescope find_files<CR>", { desc = "Telescope find Files" })
@@ -43,6 +48,7 @@ map("n", "<leader>q", function()
     vim.cmd("copen")
 end, { desc = "Diagnostics to quickfix" })
 
+-- Markdown Preview
 map("n", "<leader>mps", "<cmd>MarkdownPreview<cr>", { desc = "Markdown: Start preview" })
 map("n", "<leader>mpS", "<cmd>MarkdownPreviewStop<cr>", { desc = "Markdown: Stop preview" })
 map("n", "<leader>mpr", "<cmd>MarkdownPreviewRefresh<cr>", { desc = "Markdown: Refresh preview" })

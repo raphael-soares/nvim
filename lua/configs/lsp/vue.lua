@@ -1,7 +1,6 @@
 -- Reference: https://github.com/vuejs/language-tools/wiki/Neovim#vue-2-support
 local M = {}
 
-local keymaps = require("configs.lsp.mappings")
 local nvlsp = require("nvchad.configs.lspconfig")
 
 local vue_language_server_path = vim.fn.stdpath("data")
@@ -17,7 +16,7 @@ local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typ
 
 M.vtsls = function()
     return {
-        on_attach = keymaps.on_attach,
+        on_attach = nvlsp.on_attach,
         capabilities = nvlsp.capabilities,
         settings = {
             vtsls = {
@@ -30,7 +29,7 @@ end
 
 M.vue_ls = function()
     return {
-        on_attach = keymaps.on_attach,
+        on_attach = nvlsp.on_attach,
         capabilities = nvlsp.capabilities,
         on_init = function(client)
             client.handlers["tsserver/request"] = function(_, result, context)
