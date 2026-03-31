@@ -2,7 +2,7 @@ local map = vim.keymap.set
 
 -- General
 map("n", "<leader>a", "gg<S-v>G", { desc = "Select All" })
-map("n", "<C-s>", "<cmd>write<CR>", { desc = "Save" })
+map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 -- Scrolling
