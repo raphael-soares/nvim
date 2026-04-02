@@ -36,8 +36,4 @@ M.ui = {
     },
 }
 
-M.nvimtree = {
-    enabled = false,
-}
-
 return M
