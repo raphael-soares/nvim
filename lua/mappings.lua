@@ -2,6 +2,7 @@ local map = vim.keymap.set
 
 -- General
 map("n", "<leader>w", "<cmd>write<CR>", { desc = "Save" })
+map("n", "<leader><leader>", "<C-^>", { desc = "Alternate last file" })
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 -- Scrolling
@@ -19,6 +20,8 @@ map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle windo
 
 map("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "next buffer" })
 map("n", "<leader>bp", "<cmd>bprev<CR>", { desc = "previous buffer" })
+map("n", "<leader>bd", ":bp | bd #<CR>", { desc = "Deletar Buffer mantendo split" })
+map("n", "<leader>bf", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 
 -- LSP extra mappings
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
@@ -27,18 +30,17 @@ map({ "n", "v" }, "<leader>cf", function()
 end, { desc = "Format Code" })
 
 -- Telescope
-map("n", "<leader><leader>", "<cmd>Telescope find_files<CR>", { desc = "Telescope find Files" })
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
-map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
-map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
-map("n", "<leader>fr", function()
+map("n", "<leader>f", "<cmd>Telescope find_files<CR>", { desc = "Telescope find Files" })
+map("n", "<leader>g", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
+map("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
+map("n", "<leader>m", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
+map("n", "<leader>z", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
+map("n", "<leader>r", function()
     require("telescope.builtin").oldfiles({ cwd_only = true, prompt_title = "Recent Files" })
 end, { desc = "telescope recent files" })
 map(
     "n",
-    "<leader>fa",
+    "<leader>a",
     "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
     { desc = "telescope find all files" }
 )
